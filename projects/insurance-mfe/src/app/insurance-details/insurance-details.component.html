@@ -1,0 +1,32 @@
+<div>
+  <h3>MFE1 - Insurance</h3>
+</div>
+<div>
+  <div>
+    <label for="search">Enter policy number/phone number:</label>
+    <input
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      placeholder="Search insurance..."
+      [ngClass]="{'invalid-input': isInvalid}"
+    />
+    <button class="primary-btn" (click)="searchInsurance()">Search</button>
+  </div>
+</div>
+
+<div *ngIf="insuranceList.length > 0;">
+  <div *ngFor="let insurance of insuranceList">
+    <h2>Policy Details</h2>
+    <img [src]="insurance.photoUrl" width="200px" height="200px" alt="Policy Holder">
+    <p><strong >Policy Number:</strong> {{ insurance.policyNumber }} <strong style="margin-left: 4em;">Policy amount:</strong> ${{ insurance.amount }}</p>
+    <p><strong>Holder Name:</strong> {{ insurance.holderName }}</p>
+    <p><strong >Start Date:</strong> {{ insurance.startDate }}  <strong style="margin-left: 4em;">End Date:</strong> {{ insurance.endDate }}</p>
+    <p><strong style="margin-right: 2em;">Address:</strong> {{ insurance.address.street }}</p>
+    <p><strong style="margin-right: 6em;">.</strong>{{ insurance.address.city }}, {{ insurance.address.state }} {{ insurance.address.zip }}</p>
+    <p><button class="primary-btn" style="margin-left: 100px;" (click)="loadInstallmentsDetails()">Pay installment</button></p>
+  </div>
+</div> 
+<div *ngIf="noPolicyFound">
+  <p>No insurance found.</p>
+</div>

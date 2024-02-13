@@ -1,0 +1,51 @@
+// Define variables
+$background-color: #f2f2f2;
+$highlight-color: #ffcccc;
+
+// Table styles
+.table {
+  display: table;
+  width: 100%;
+
+  // Table rows
+  &-row {
+    display: table-row;
+  }
+
+  // Table cells
+  &-cell {
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+
+  // Header styles
+  &.header {
+    font-weight: bold;
+    background-color: $background-color;
+  }
+
+  // Additional row styles
+  &.additional {
+    background-color: $highlight-color;
+  }
+}
+.primary-btn {
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .primary-btn:hover {
+    background-color: #0056b3; /* Darker Blue */
+  }
+  .invalid-input {
+    border-color: red;
+  }
